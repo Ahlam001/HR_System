@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Devisions</h1>
+
+<div id="devisions">
+  <% @devisions.each do |devision| %>
+    <%= render devision %>
+    <p>
+      <%= link_to "Show this devision", devision %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New devision", new_devision_path %>

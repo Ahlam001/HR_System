@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @devision %>
+
+<div>
+  <%= link_to "Edit this devision", edit_devision_path(@devision) %> |
+  <%= link_to "Back to devisions", devisions_path %>
+
+  <%= button_to "Destroy this devision", @devision, method: :delete %>
+</div>

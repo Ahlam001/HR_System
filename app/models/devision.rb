@@ -1,0 +1,2 @@
+class Devision < ApplicationRecord
+end
