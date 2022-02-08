@@ -1,14 +1,44 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Devisions</h1>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+</style>
+<h1>Divisions</h1>
+<table style="width: 90%">
+<div id="divisions">
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Manager</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-<div id="devisions">
   <% @devisions.each do |devision| %>
-    <%= render devision %>
-    <p>
-      <%= link_to "Show this devision", devision %>
-    </p>
+    <tr>
+    <% employee = Employee.find_by(id:devision.manager) %>
+    <% manager = nil %>
+    <% unless employee == nil then%>
+      <% manager = employee.name %>
+    <% end %>
+    <td><%= devision.name %></td>
+    <td><%= devision.description %></td>
+    <td><%= manager %></td>
+   
+    <td><%= link_to "Edit", edit_devision_path(devision) %></td>
+    <td><%= button_to "Delete", devision, method: :delete %></td>
+    </tr>
+    
   <% end %>
+</table>
 </div>
-
 <%= link_to "New devision", new_devision_path %>
+<a  href="http://127.0.0.1:3000">Back</a>

@@ -31,14 +31,11 @@
     <%= form.date_field :finish_date %>
   </div>
 
-  <div>
-    <%= form.label :attribute, style: "display: block" %>
-    <%= form.text_field :attribute %>
-  </div>
+  
 
-  <div>
-    <%= form.label :team, style: "display: block" %>
-    <%= form.text_field :team %>
+   <div>
+    <%= form.label :team_id, style: "display: block" %>
+    <%= form.collection_select :team_id, Team.all, :id, :name, include_blank: true %>
   </div>
 
   <div>

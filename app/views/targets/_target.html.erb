@@ -19,15 +19,16 @@
     <%= target.finish_date %>
   </p>
 
-  <p>
-    <strong>Attribute:</strong>
-    <%= target.attribute %>
-  </p>
-
-  <p>
+  
+  <% tm = Team.find_by(id:target.team_id) %>
+    <% team = nil %>
+    <% unless tm == nil then%>
+      <% team = tm.name %>
+    <% end %>
+  <%# <p>
     <strong>Team:</strong>
     <%= target.team %>
-  </p>
+  </p> %>
 
   <p>
     <strong>Status:</strong>

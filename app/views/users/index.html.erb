@@ -1,14 +1,37 @@
 <p style="color: green"><%= notice %></p>
 
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+</style>
+
 <h1>Users</h1>
+<table style="width: 90%">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Password </th>
+    
+  </tr>
+<% @users.each do |user| %>
+<tr>
+  <td><%= user.name %></td>
+    <td><%= user.email %></td>
+     <td><%= user.password %></td>
+    
+    <td><%= link_to "Edit", edit_user_path(user) %></td>
+    <td><%= button_to "Delete", user, method: :delete %></td>
 
-<div id="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
-  <% end %>
-</div>
+ <% end %>
+</table>
 
+
+<br>
 <%= link_to "New user", new_user_path %>
+<a  href="http://127.0.0.1:3000">Back</a>
+</html>

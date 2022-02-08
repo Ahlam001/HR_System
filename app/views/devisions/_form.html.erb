@@ -21,14 +21,14 @@
     <%= form.text_area :description %>
   </div>
 
-  <div>
-    <%= form.label :teams, style: "display: block" %>
-    <%= form.text_field :teams %>
-  </div>
 
   <div>
+    <%= form.label :teams, style: "display: block" %>
+    <%= form.collection_select :team, Team.all, :id, :name, include_blank: true %>
+  </div>
+    <div>
     <%= form.label :manager, style: "display: block" %>
-    <%= form.text_field :manager %>
+    <%= form.collection_select :manager, Employee.all, :id, :name, include_blank: true %>
   </div>
 
   <div>

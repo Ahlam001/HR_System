@@ -1,14 +1,45 @@
 <p style="color: green"><%= notice %></p>
-
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+</style>
 <h1>Targets</h1>
-
+<table style="width: 90%">
 <div id="targets">
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Start date</th>
+    <th>Finish date</th>
+    <th>Team</th>
+    <th>Status</th>
+  </tr>
   <% @targets.each do |target| %>
-    <%= render target %>
-    <p>
-      <%= link_to "Show this target", target %>
-    </p>
+    <tr>
+    <% tm = Team.find_by(id:target.team) %> 
+    <% team = nil %>
+    <% unless tm == nil then%>
+      <% team = tm.name %>
+    <% end %>
+    <td><%= target.title %></td>
+    <td><%= target.description %></td>
+    <td><%= target.start_date.strftime("%Y-%m-%d") %></td>
+    <td><%= target.finish_date.strftime("%Y-%m-%d") %></td>
+    <td><%= team %></td>
+    <td><%= target.status %></td>
+    <td><%= link_to "Edit", edit_target_path(target) %></td>
+    <td><%= button_to "Delete", target, method: :delete %></td>
+    </tr>
+    
   <% end %>
+</table>
 </div>
 
 <%= link_to "New target", new_target_path %>
+<a  href="http://127.0.0.1:3000">Back</a>

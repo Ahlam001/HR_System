@@ -1,14 +1,46 @@
 <p style="color: green"><%= notice %></p>
-
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+</style>
 <h1>Teams</h1>
-
+<table style="width: 90%">
 <div id="teams">
+  <table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Division </th>
+    <th>Team lead </th>
+  </tr>
   <% @teams.each do |team| %>
-    <%= render team %>
-    <p>
-      <%= link_to "Show this team", team %>
-    </p>
+    <tr>
+    <% div = Devision.find_by(id:team.devision_id) %>
+  <% division = nil %>
+  <% unless div == nil then%>
+    <% division = div.name %>
   <% end %>
+  <% employee = Employee.find_by(id:team.team_lead) %>
+    <% lead = nil %>
+    <% unless employee == nil then%>
+      <% lead = employee.name %>
+    <% end %>
+    <td><%= team.name %></td>
+    <td><%= team.description %></td>
+    <td><%= division %></td>
+    <td><%= lead %></td>
+    <td><%= link_to "Edit", edit_team_path(team) %></td>
+    <td><%= button_to "Delete", team, method: :delete %></td>
+    </tr>
+    
+  <% end %>
+</table>
 </div>
 
 <%= link_to "New team", new_team_path %>
+<a href="http://127.0.0.1:3000">Back</a>
