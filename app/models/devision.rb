@@ -1,6 +1,6 @@
 class Devision < ApplicationRecord
     has_one :employee
-    has_many :teams
+    has_many :teams,  dependent: :destroy
     
 
     validates :name, presence: true

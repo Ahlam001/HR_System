@@ -34,6 +34,7 @@ th, td {
     <td><%= team.description %></td>
     <td><%= division %></td>
     <td><%= lead %></td>
+    <td><%= link_to "Show", team %></td>
     <td><%= link_to "Edit", edit_team_path(team) %></td>
     <td><%= button_to "Delete", team, method: :delete %></td>
     </tr>

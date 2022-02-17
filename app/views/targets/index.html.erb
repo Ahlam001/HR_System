@@ -33,6 +33,7 @@ th, td {
     <td><%= target.finish_date.strftime("%Y-%m-%d") %></td>
     <td><%= team %></td>
     <td><%= target.status %></td>
+    <td><%= link_to "Show", target %></td>
     <td><%= link_to "Edit", edit_target_path(target) %></td>
     <td><%= button_to "Delete", target, method: :delete %></td>
     </tr>

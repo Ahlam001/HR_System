@@ -32,7 +32,8 @@ th, td {
     <td><%= devision.name %></td>
     <td><%= devision.description %></td>
     <td><%= manager %></td>
-   
+      
+   <td><%= link_to "Show", devision %></td>
     <td><%= link_to "Edit", edit_devision_path(devision) %></td>
     <td><%= button_to "Delete", devision, method: :delete %></td>
     </tr>
