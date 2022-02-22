@@ -35,7 +35,15 @@
     <%= form.label :employment_status, style: "display: block" %>
     <%= form.text_field :employment_status %>
   </div>
+ <div>
+    <%= form.label :devision_id, style: "display: block" %>
+    <%= form.collection_select :devision_id, Devision.all, :id, :name, include_blank: true %>
+  </div>
 
+  <div>
+    <%= form.label :team_id, style: "display: block" %>
+    <%= form.collection_select :team_id, Team.all, :id, :name, include_blank: true %>
+  </div>
   <div>
     <%= form.submit %>
   </div>

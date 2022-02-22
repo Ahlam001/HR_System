@@ -1,7 +1,8 @@
 class Team < ApplicationRecord
-    has_many :employees
-    has_many :Target
-    belongs_to :division
+    has_many :targets, dependent: :destroy
+	has_many :employees
+	# has_one :Devision
+	belongs_to :devision
 
     validates :name, presence: true
     validates :description, length: { maximum: 30 }

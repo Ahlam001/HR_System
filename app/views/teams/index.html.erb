@@ -1,14 +1,136 @@
 <p style="color: green"><%= notice %></p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 20px;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+btn {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.default {background-color: #e7e7e7; color: black;} /* Gray */ 
+.default:hover {background: #ddd;}
+
+
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+
+.button4 {border-radius: 15px;}
+
+h1 {
+  position: absolute;
+  left: 60px;
+  top: 70px;
+}
+</style>
+
+<ul>
+  <li><a class="active" href="http://127.0.0.1:3000">Home</a></li>
+  <li><a href="http://127.0.0.1:3000/users">Users</a></li>
+  <li><a href="http://127.0.0.1:3000/employees">Employees</a></li>
+  <li><a href="http://127.0.0.1:3000/teams">Teams</a></li>
+  <li><a href="http://127.0.0.1:3000/targets">Targets</a></li>
+  <li><a href="http://127.0.0.1:3000/devisions">Division</a></li>
+  <li style="float:right"><a href="#about">About</a></li>
+</ul>
+</br>
+</br>
+
 
 <h1>Teams</h1>
 
+<%= button_to "",new_team_path,:class => "fa fa-plus", :style => "border:none; font-size:30px; position: absolute;
+  left: 1094px;",:method => :get %>
+</br>
+</br>
+<table style="width: 90%" class="center">
 <div id="teams">
+  
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Division </th>
+    <th>Team lead </th>
+    <th>Members </th>
+  </tr>
   <% @teams.each do |team| %>
-    <%= render team %>
-    <p>
-      <%= link_to "Show this team", team %>
-    </p>
+    <tr>
+    <% div = Devision.find_by(id:team.devision_id) %>
+  <% division = nil %>
+  <% unless div == nil then%>
+    <% division = div.name %>
   <% end %>
+  <% employee = Employee.find_by(id:team.team_lead) %>
+    <% lead = nil %>
+    <% unless employee == nil then%>
+      <% lead = employee.name %>
+    <% end %>
+    <td><%= team.name %></td>
+    <td><%= team.description %></td>
+    <td><%= division %></td>
+    <td><%= lead %></td>
+    <td><%= team.members%></td>
+    
+    
+    
+  <td><%= button_to "Show", team, :class => "button button4", :method => :get %></td>
+  <td><%= button_to " Edit ", edit_team_path(team), :class => "button button4", :method => :get %></td>
+  <td><%= button_to "Delete", team, :class => "button button4", :method => :delete %></td>
+    </tr>
+    
+  <% end %>
+</table>
 </div>
 
-<%= link_to "New team", new_team_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_02_181714) do
+ActiveRecord::Schema.define(version: 2022_02_17_051129) do
 
   create_table "devisions", force: :cascade do |t|
     t.string "name"
@@ -29,6 +29,10 @@ ActiveRecord::Schema.define(version: 2022_02_02_181714) do
     t.string "employment_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "team_id"
+    t.integer "devision_id"
+    t.index ["devision_id"], name: "index_employees_on_devision_id"
+    t.index ["team_id"], name: "index_employees_on_team_id"
   end
 
   create_table "targets", force: :cascade do |t|
@@ -36,11 +40,11 @@ ActiveRecord::Schema.define(version: 2022_02_02_181714) do
     t.text "description"
     t.date "start_date"
     t.date "finish_date"
-    t.string "attribute"
-    t.string "team"
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "team_id"
+    t.index ["team_id"], name: "index_targets_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -50,6 +54,8 @@ ActiveRecord::Schema.define(version: 2022_02_02_181714) do
     t.string "team_lead"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "devision_id"
+    t.index ["devision_id"], name: "index_teams_on_devision_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -24,4 +24,26 @@
     <%= employee.employment_status %>
   </p>
 
+
+  <% div = Devision.find_by(id:employee.devision_id) %>
+  <% devision = nil %>
+  <% unless div == nil then%>
+    <% devision = div.name %>
+  <% end %>
+  <% tm = Team.find_by(id:employee.team_id) %>
+  <% team = nil %>
+  <% unless tm == nil then%>
+    <% team = tm.name %>
+  <% end %>
+
+  <p>
+    <strong>Division:</strong>
+    <%= devision %>
+  </p>
+
+  <p>
+    <strong>Team:</strong>
+    <%= team %>
+  </p>
+
 </div>

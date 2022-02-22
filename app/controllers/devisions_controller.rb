@@ -21,7 +21,15 @@ class DevisionsController < ApplicationController
 
   # POST /devisions or /devisions.json
   def create
-    @devision = Devision.new(devision_params)
+
+    devision_teams = devision_params["teams"].map{|team| Team.find(team.to_i)}
+    d_p = devision_params
+    d_p["teams"] = devision_teams
+
+
+
+
+    @devision = Devision.new(d_p)
 
     respond_to do |format|
       if @devision.save
@@ -36,8 +44,13 @@ class DevisionsController < ApplicationController
 
   # PATCH/PUT /devisions/1 or /devisions/1.json
   def update
+    devision_teams = devision_params["teams"].map{|team| Team.find(team.to_i)}
+    d_p = devision_params
+    d_p["teams"] = devision_teams
+
+
     respond_to do |format|
-      if @devision.update(devision_params)
+      if @devision.update(d_p)
         format.html { redirect_to devision_url(@devision), notice: "Devision was successfully updated." }
         format.json { render :show, status: :ok, location: @devision }
       else
@@ -65,6 +78,6 @@ class DevisionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def devision_params
-      params.require(:devision).permit(:name, :description, :teams, :manager)
+      params.require(:devision).permit(:name, :description, :manager,:teams => [])
     end
 end

@@ -9,10 +9,12 @@
     <%= devision.description %>
   </p>
 
-  <p>
-    <strong>Teams:</strong>
-    <%= devision.teams %>
-  </p>
+ <% employee = Employee.find_by(id:devision.manager) %>
+    <% manager = nil %>
+    <% unless employee == nil then%>
+      <% manager = employee.name %>
+    <% end %>
+   
 
   <p>
     <strong>Manager:</strong>
