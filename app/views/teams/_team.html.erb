@@ -1,13 +1,45 @@
 <div id="<%= dom_id team %>">
-  <p>
-    <strong>Name:</strong>
-    <%= team.name %>
-  </p>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 20px;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
 
-  <p>
-    <strong>Description:</strong>
-    <%= team.description %>
-  </p>
+}
+
+.button {
+  /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+   cursor: pointer;
+}
+
+.button4 {border-radius: 15px;
+ background-color: grey;}
+.button5 {border-radius: 15px;
+ background-color: #80ced6;}
+.button6 {border-radius: 15px;
+ background-color: red;}
+ h2 {
+  position: absolute;
+  left: 600px;
+  top: 70px;
+
+ 
+
+}
+</style>
   <% div = Devision.find_by(id:team.devision_id) %>
   <% division = nil %>
   <% unless div == nil then%>
@@ -19,13 +51,34 @@
       <% lead = employee.name %>
     <% end %>
   <p>
-    <strong>Members:</strong>
-    <%= team.members %>
-  </p>
+<h2>Team Details</h2>
+</br></br></br></br></br></br></br></br>
 
-  <p>
-    <strong>Team lead:</strong>
-    <%= team.team_lead %>
-  </p>
+<table style="width: 90%" class="center">
+<div id="teams">
+  
+  <tr>
+  <th>ID</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Division </th>
+    <th>Team lead </th>
+    <th>Members </th>
+  </tr>
+<tr>
+ <td><%= team.id %></td>
+    <td><%= team.name %></td>
+    <td><%= team.description %></td>
+    <td><%= division %></td>
+    <td><%= lead %></td>
+    <td><%= team.members%></td>
+    
+    
+      <td><%= button_to "Back", teams_path, :class => "button button4", :method => :get %></td>
+  <td><%= button_to " Edit ", edit_team_path(@team), :class => "button button5", :method => :get %></td>
+  <td><%= button_to "Delete", team, :class => "button button6", :method => :delete %></td>
+    </tr>
+
+  
 
 </div>
