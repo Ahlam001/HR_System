@@ -1,24 +1,72 @@
-<div id="<%= dom_id devision %>">
-  <p>
-    <strong>Name:</strong>
-    <%= devision.name %>
-  </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= devision.description %>
-  </p>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 20px;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
 
- <% employee = Employee.find_by(id:devision.manager) %>
+}
+
+.button {
+  /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+   cursor: pointer;
+}
+
+.button4 {border-radius: 15px;
+ background-color: grey;}
+.button5 {border-radius: 15px;
+ background-color: #80ced6;}
+.button6 {border-radius: 15px;
+ background-color: red;}
+ h2 {
+  position: absolute;
+  left: 600px;
+  top: 70px;
+
+ 
+
+}
+</style>
+<h2>Division Details</h2>
+</br></br></br></br></br></br></br></br>
+<table style="width: 90%"class="center">
+  <tr>
+  <th>Id</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Teams</th>
+    <th>Manager</th>
+   
+  </tr>
+   <% employee = Employee.find_by(id:devision.manager) %>
     <% manager = nil %>
     <% unless employee == nil then%>
       <% manager = employee.name %>
     <% end %>
-   
 
-  <p>
-    <strong>Manager:</strong>
-    <%= devision.manager %>
-  </p>
-
-</div>
+  <td><%= devision.id %></td>
+   <td><%= devision.name %></td>
+     <td> <%= devision.description %></td>
+       <td><%= devision.teams.collect(&:name).join(',') %></td>
+        <td><%= manager %></td>
+    <td><%= button_to "Back", devisions_path, :class => "button button4", :method => :get %></td>
+  <td><%= button_to " Edit ", edit_devision_path(devision), :class => "button button5", :method => :get %></td>
+  <td><%= button_to "Delete", devision, :class => "button button6", :method => :delete %></td>
+    </tr>
+   <tr>
+   </tr>
+   <div id="<%= dom_id devision %>">
+  
