@@ -24,10 +24,13 @@
   <div>
     <%= form.label :members, style: "display: block" %>
     <%= form.text_area :members %>
+   
   </div>
+
+  
    <div>
     <%= form.label :devision_id, style: "display: block" %>
-    <%= form.collection_select :devision_id, Devision.all, :id, :name, include_blank: true %>
+    <%= form.collection_select :devision_id, Devision.all, :id, :name, include_blank: true  %>
   </div>
 
  <div>

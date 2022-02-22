@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-    has_many :targets
+    has_many :targets, dependent: :destroy
 	has_many :employees
 	# has_one :Devision
 	belongs_to :devision

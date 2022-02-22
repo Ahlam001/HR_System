@@ -22,14 +22,21 @@
   </div>
 
 
-  <div>
-    <%= form.label :teams, style: "display: block" %>
-    <%= form.collection_select :team, Team.all, :id, :name, include_blank: true %>
-  </div>
     <div>
     <%= form.label :manager, style: "display: block" %>
     <%= form.collection_select :manager, Employee.all, :id, :name, include_blank: true %>
   </div>
+
+ <div>
+    <%= form.label "Teams", style: "display: block" %>
+   <%# <%= form.select :teams, Team.all.collect { |team| ["##{team.id}", team] },{:include_hidden => false},{ :multiple => true, class: 'selectpicker'} %> 
+   <%= form.select :teams, Team.all.collect{ |team| [team.name,team.id] },{:include_hidden => false, selected: @devision.teams.map(&:id)},{ :multiple => true, :class => 'p-1 pr-5'} %> 
+
+  </div>
+
+
+
+
 
   <div>
     <%= form.submit %>
