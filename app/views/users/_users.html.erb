@@ -1,0 +1,77 @@
+<div id="<%= dom_id user %>">
+
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 20px;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.button {
+  /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+   cursor: pointer;
+}
+
+.button4 {border-radius: 15px;
+ background-color: grey;}
+.button5 {border-radius: 15px;
+ background-color: #80ced6;}
+.button6 {border-radius: 15px;
+ background-color: red;}
+ h2 {
+  position: absolute;
+  left: 600px;
+  top: 70px;
+
+ 
+
+}
+</style>
+  <% tm = Team.find_by(id:target.team_id) %>
+    <% team = nil %>
+    <% unless tm == nil then%>
+      <% team = tm.name %>
+    <% end %>
+
+<h2>Target Details</h2>
+</br></br></br></br></br></br></br></br>
+
+<table style="width: 90%" class="center">
+
+ <tr>
+ <th>ID</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Start date</th>
+    <th>Finish date</th>
+    <th>Team</th>
+    <th>Status</th>
+  </tr>
+<tr>
+<td><%= user.id %></td>
+   <td><%= user.email %></td>
+    <td><%= user.password %></td>
+  
+ 
+      <td><%= button_to "Back", targets_path, :class => "button button4", :method => :get %></td>
+  <td><%= button_to " Edit ", edit_target_path(@target), :class => "button button5", :method => :get %></td>
+  <td><%= button_to "Delete", target, :class => "button button6", :method => :delete %></td>
+    </tr>
+</tr>
+  
+
+</div>
