@@ -1,35 +1,54 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
-.w3-sidebar {
-  z-index: 3;
-  width: 250px;
-  top: 43px;
-  bottom: 0;
-  height: inherit;
-}
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+
 </style>
+</head>
 <body>
 
-<!-- Sidebar -->
-<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
-    <i class="fa fa-remove"></i>
-  </a>
-  <h4 class="w3-bar-item"><b>HR Employees System</b></h4>
-   <a class="w3-bar-item w3-button w3-hover-black" href="http://127.0.0.1:3000/users">Users</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="http://127.0.0.1:3000/employees">Employees</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="http://127.0.0.1:3000/teams">Teams</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="http://127.0.0.1:3000/targets">Targets</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="http://127.0.0.1:3000/devisions">Divisions</a>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)"  class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>HR <br> </b></h3>
+  </div>
+  <div class="w3-bar-block">
+  <%# <--! <a href="#"  class="w3-bar-item w3-button w3-hover-white">User</a> --> %>
+    <a href="http://127.0.0.1:3000/employees" class="w3-bar-item w3-button w3-hover-white">Employees</a> 
+    <a href="http://127.0.0.1:3000/teams" class="w3-bar-item w3-button w3-hover-white">Teams</a> 
+    <a href="http://127.0.0.1:3000/devisions" class="w3-bar-item w3-button w3-hover-white">Divisions</a> 
+    <a href="http://127.0.0.1:3000/targets"  class="w3-bar-item w3-button w3-hover-white">Targets</a> 
+    <a href= "/users/sign_up"  class="w3-bar-item w3-button w3-hover-white">User Sign UP</a>
+     <a href= "/users/sign_in" class="w3-bar-item w3-button w3-hover-white">User Sign In</a>
+  </div>
 </nav>
+
+
+
+<div class="w3-main" style="margin-left:340px;margin-right:40px; ">
+
+  <!-- Header -->
+  <br><br><br>
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>HR Employee Administration System Project</b></h1>
+    <h1 class="w3-xxxlarge w3-text-black"><b></b></h1>
+    <hr style="width:50px;border:5px solid black" class="w3-round">
+  </div>
+  
+
+
+
+
+
+</body>
 </html>
