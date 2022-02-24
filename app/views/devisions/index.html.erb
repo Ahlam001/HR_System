@@ -44,7 +44,7 @@ li a:hover:not(.active) {
 }
 
 .active {
-  background-color: #04AA6D;
+  background-color: #1CA0F2;
 }
 .btn {
   border: none;
@@ -58,7 +58,7 @@ li a:hover:not(.active) {
 
 
 .button {
-  background-color: #04AA6D; /* Green */
+  background-color: #1CA0F2; /* Green */
   border: none;
   color: white;
   padding: 10px;
@@ -76,6 +76,18 @@ h1 {
   left: 60px;
   top: 70px;
 }
+.action {
+  float: right;
+  background-color: red; 
+  color: white; 
+ 
+  font-size: 15px; 
+  border-radius: 15px;
+  top: 60px;
+  padding-top: 14px;
+  
+
+}
 </style>
 
 <ul>
@@ -85,18 +97,20 @@ h1 {
   <li><a href="http://127.0.0.1:3000/teams">Teams</a></li>
   <li><a href="http://127.0.0.1:3000/targets">Targets</a></li>
   <li><a href="http://127.0.0.1:3000/devisions">Division</a></li>
-  <li style="float:right"><a href="#about">About</a></li>
+
+  <li style="float:right"><%= link_to "Sign out", destroy_user_session_path, :method => :get %></li>
+
 </ul>
-</br>
-</br>
+<br>
+<br>
 <h1>Divisions</h1>
 
 
 <%= button_to "", new_devision_path,:class => "fa fa-plus", :style => "border:none; font-size:30px; position: absolute;
   left: 1300px;",:method => :get %>
 <div>
-</br>
-</br>
+<br>
+<br>
 <table style="width: 90%"class="center">
 <div id="divisions">
 

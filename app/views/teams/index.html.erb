@@ -43,7 +43,7 @@ li a:hover:not(.active) {
 }
 
 .active {
-  background-color: #04AA6D;
+  background-color: #1CA0F2;
 }
 btn {
   border: none;
@@ -57,7 +57,7 @@ btn {
 
 
 .button {
-  background-color: #04AA6D; /* Green */
+  background-color: #1CA0F2; /* Green */
   border: none;
   color: white;
   padding: 10px;
@@ -83,18 +83,18 @@ h1 {
   <li><a href="http://127.0.0.1:3000/teams">Teams</a></li>
   <li><a href="http://127.0.0.1:3000/targets">Targets</a></li>
   <li><a href="http://127.0.0.1:3000/devisions">Division</a></li>
-  <li style="float:right"><a href="#about">About</a></li>
+    <li style="float:right"><a href="/users/sign_out">Sign out</a></li>
 </ul>
-</br>
-</br>
+<br>
+<br>
 
 
 <h1>Teams</h1>
 
 <%= button_to "",new_team_path,:class => "fa fa-plus", :style => "border:none; font-size:30px; position: absolute;
   left: 1300px;",:method => :get %>
-</br>
-</br>
+<br>
+<br>
 <table style="width: 90%" class="center">
 <div id="teams">
   
