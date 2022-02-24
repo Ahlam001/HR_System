@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+
   get 'main/index'
   resources :devisions
   resources :targets
@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
  root "main#index"
- 
+ devise_for :users, :controllers => { :registrations => "users" }
 #  root :to=> "main#index"
 end
