@@ -1,44 +1,62 @@
+
+<style>
+.form-style-8{
+  border-radius: 5%;
+	font-family: 'Open Sans Condensed', arial, sans;
+	width: 500px;
+	padding: 80px;
+	background: #FFFFFF;
+	margin: 50px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+</style>
+
+
 <%= form_with(model: team) do |form| %>
   <% if team.errors.any? %>
-    <div style="color: red">
+    <div style="color: red;	 position: absolute; left: 500px;">
       <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
 
-      <ul>
+      <ul style="position: absolute; left: 300px;">
         <% team.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-
+<div class="form-style-8">
   <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
-
+<br>
   <div>
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description %>
   </div>
-
+<br>
   <div>
     <%= form.label :members, style: "display: block" %>
     <%= form.text_area :members %>
    
   </div>
-
+<br>
   
    <div>
     <%= form.label :devision_id, style: "display: block" %>
     <%= form.collection_select :devision_id, Devision.all, :id, :name, include_blank: true  %>
   </div>
-
+<br>
  <div>
     <%= form.label :team_lead, style: "display: block" %>
     <%= form.collection_select :team_lead, Employee.all, :id, :name, include_blank: true %>
   </div>
-
+<br>
   <div>
     <%= form.submit %>
+  </div>
   </div>
 <% end %>

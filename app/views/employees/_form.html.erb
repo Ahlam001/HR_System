@@ -1,50 +1,70 @@
+
+
+<style>
+.form-style-8{
+  border-radius: 5%;
+	font-family: 'Open Sans Condensed', arial, sans;
+	width: 500px;
+	padding: 80px;
+	background: #FFFFFF;
+	margin: 50px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+</style>
+
 <%= form_with(model: employee) do |form| %>
   <% if employee.errors.any? %>
-    <div style="color: red">
+    <div style="color: red;  position: absolute; left: 500px;">
       <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
 
-      <ul>
+      <ul style="position: absolute; left: 300px;">
         <% employee.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-
+<div class="form-style-8">
   <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
-
+<br>
   <div>
     <%= form.label :email, style: "display: block" %>
     <%= form.text_field :email %>
   </div>
-
+<br>
   <div>
     <%= form.label :job, style: "display: block" %>
     <%= form.text_field :job %>
   </div>
-
+<br>
   <div>
     <%= form.label :salary, style: "display: block" %>
     <%= form.number_field :salary %>
   </div>
-
+<br>
   <div>
     <%= form.label :employment_status, style: "display: block" %>
     <%= form.text_field :employment_status %>
   </div>
+  <br>
  <div>
     <%= form.label :devision_id, style: "display: block" %>
     <%= form.collection_select :devision_id, Devision.all, :id, :name, include_blank: true %>
   </div>
-
+<br>
   <div>
     <%= form.label :team_id, style: "display: block" %>
     <%= form.collection_select :team_id, Team.all, :id, :name, include_blank: true %>
   </div>
+  <br>
   <div>
     <%= form.submit %>
+  </div>
   </div>
 <% end %>

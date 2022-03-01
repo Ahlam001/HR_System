@@ -7,6 +7,7 @@ ruby "3.0.0"
 gem "rails", "~> 7.0.1"
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'jquery-rails'
+gem "rails-i18n"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

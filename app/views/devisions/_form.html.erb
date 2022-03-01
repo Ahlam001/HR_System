@@ -1,44 +1,59 @@
+
+<style>
+.form-style-8{
+  border-radius: 5%;
+	font-family: 'Open Sans Condensed', arial, sans;
+	width: 500px;
+	padding: 80px;
+	background: #FFFFFF;
+	margin: 50px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+</style>
+
+
 <%= form_with(model: devision) do |form| %>
   <% if devision.errors.any? %>
-    <div style="color: red">
+    <div style="color: red;	 position: absolute; left: 500px;">
       <h2><%= pluralize(devision.errors.count, "error") %> prohibited this devision from being saved:</h2>
 
-      <ul>
+      <ul style="position: absolute; left: 300px;">
         <% devision.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-
+<div class="form-style-8">
   <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
-
+<br>
   <div>
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description %>
   </div>
 
-
+<br>
     <div>
     <%= form.label :manager, style: "display: block" %>
     <%= form.collection_select :manager, Employee.all, :id, :name, include_blank: true %>
   </div>
-
+<br>
  <div>
     <%= form.label "Teams", style: "display: block" %>
    <%# <%= form.select :teams, Team.all.collect { |team| ["##{team.id}", team] },{:include_hidden => false},{ :multiple => true, class: 'selectpicker'} %> 
    <%= form.select :teams, Team.all.collect{ |team| [team.name,team.id] },{:include_hidden => false, selected: @devision.teams.map(&:id)},{ :multiple => true, :class => 'p-1 pr-5'} %> 
 
   </div>
-
-
-
-
+ <br>
 
   <div>
     <%= form.submit %>
+  </div>
   </div>
 <% end %>

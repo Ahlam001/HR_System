@@ -1,49 +1,68 @@
+
+<style>
+.form-style-8{
+  border-radius: 5%;
+	font-family: 'Open Sans Condensed', arial, sans;
+	width: 500px;
+	padding: 80px;
+	background: #FFFFFF;
+	margin: 50px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+</style>
+
+
+
 <%= form_with(model: target) do |form| %>
   <% if target.errors.any? %>
-    <div style="color: red">
+    <div style="color: red; position: absolute; left: 500px;">
       <h2><%= pluralize(target.errors.count, "error") %> prohibited this target from being saved:</h2>
 
-      <ul>
+      <ul style="position: absolute; left: 300px;">
         <% target.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-
+<div class="form-style-8">
   <div>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
-
+<br>
   <div>
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description %>
   </div>
-
+<br>
   <div>
     <%= form.label :start_date, style: "display: block" %>
     <%= form.date_field :start_date %>
   </div>
-
+<br>
   <div>
     <%= form.label :finish_date, style: "display: block" %>
     <%= form.date_field :finish_date %>
   </div>
 
-  
+  <br>
 
    <div>
     <%= form.label :team_id, style: "display: block" %>
     <%= form.collection_select :team_id, Team.all, :id, :name, include_blank: true %>
   </div>
-
+<br>
   <div>
     <%= form.label :status, style: "display: block" %>
     <%= form.text_field :status %>
   </div>
-
+<br>
   <div>
     <%= form.submit %>
+  </div>
   </div>
 <% end %>

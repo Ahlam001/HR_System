@@ -1,9 +1,47 @@
-<h1>New devision</h1>
+
+<h1 style=" padding: 30px 30px 10px 650px;">New devision</h1>
 
 <%= render "form", devision: @devision %>
 
+
+
+
+<style>
+.container { 
+  height: 50px;
+  position: relative;
+  border: none; 
+}
+.button {
+  /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+ 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+   cursor: pointer;
+   border-radius: 15px;
+ background-color: grey;
+ 
+}
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+ </style>
+
 <br>
 
-<div>
-  <%= link_to "Back to devisions", devisions_path %>
+<div class="container">
+<div class="center">
+  <%= link_to "Back to devisions", devisions_path, :class => "button button4"%>
+</div>
 </div>
