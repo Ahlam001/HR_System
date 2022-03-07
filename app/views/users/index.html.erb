@@ -11,41 +11,27 @@ th, td {
 .center {
   margin-left: auto;
   margin-right: auto;
+   position: absolute;
+  left: 300px;
+  top: 200px;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
 
-li {
-  float: left;
-  border-right:1px solid #bbb;
-}
 
-li:last-child {
-  border-right: none;
-}
+
 
 li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  
   text-decoration: none;
 }
 
-li a:hover:not(.active) {
-  background-color: #111;
-}
 
-.active {
-  background-color: #1CA0F2;
-}
-btn {
+
+
+.btn {
   border: none;
   color: white;
   padding: 14px 28px;
@@ -69,58 +55,76 @@ btn {
 
 .button4 {border-radius: 15px;}
 
-h1 {
+h2 {
   position: absolute;
-  left: 60px;
-  top: 70px;
+  left: 300px;
+  top: 140px;
+}
+li a:hover {
+  background-color: #555;
+  color: white;
 }
 </style>
 
-<ul>
-  <li><a class="active" href="http://127.0.0.1:3000">Home</a></li>
-  <%# <li><a href="http://127.0.0.1:3000/users">Users</a></li> %>
-  <li><a href="http://127.0.0.1:3000/employees">Employees</a></li>
-  <li><a href="http://127.0.0.1:3000/teams">Teams</a></li>
-  <li><a href="http://127.0.0.1:3000/targets">Targets</a></li>
-  <li><a href="http://127.0.0.1:3000/devisions">Division</a></li>
-    <li style="float:right"><a href="/users/sign_out">Sign out</a></li>
+<ul style=" list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: #333;">
+<li style="color:white; font-size: 20px; position: absolute; left: 30px; top: 25px;  float: left;
+  border-right:1px solid #bbb;">HR System Platform</li>
+    <%# <li><%= @user.email %>
+<li style="float:right; padding: 16px 16px;   display: block; color: white;text-align: center;"><a href="/users/sign_out">Sign out</a></li>
 </ul>
 <br>
 <br>
 
 
-<h1>Teams</h1>
+<h2>List of Users</h2>
+<br><br> <br>
+<ul style="width: 250px;  background-color: #f1f1f1;  list-style-type: none; margin: 0; padding: 0;">
+  <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;" href="http://127.0.0.1:3000">Home</a></li>
+<li><a style=" text-decoration: none; padding: 20px 20px; color: #000;" href="http://127.0.0.1:3000/users">Users</a></li> 
+ <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;"href="http://127.0.0.1:3000/employees">Employees</a></li>
+ <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;"href="http://127.0.0.1:3000/teams">Teams</a></li>
+  <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;" href="http://127.0.0.1:3000/targets">Targets</a></li>
+  <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;"href="http://127.0.0.1:3000/devisions">Division</a></li>
+</ul>
 
-<%= button_to "",new_team_path,:class => "fa fa-plus", :style => "border:none; font-size:30px; position: absolute;
-  left: 1300px;",:method => :get %>
-<br>
-<br>
-<table style="width: 90%" class="center">
-<div id="teams">
+<table style="width: 60%" class="center">
+<div id="users">
   
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Division </th>
-    <th>Team lead </th>
-    <th>Members </th>
+  <th>ID</th>
+    <th>Email</th>
+    <th>picture</th>
+    <th>password </th>
+   
   </tr>
   <% @users.each do |user| %>
     <tr>
-  
+   <td><%= user.id %></td>
     <td><%= user.email %></td>
-    <td><%= user.cover %></td>
-    <td><%= user.password %></td>
+     <td><%= user.cover %></td> 
+    <%# <%= image_tag url_for(cover) %>
+<%# <%= link_to rails_blob_path(cover.filename, disposition: "cover") %> 
+   
+        
+        <%# <%= link_to rails_blob_path(cover.filename, disposition: "cover") %> 
+   
+    
+ <%# <td><%= image_tag(@user.cover,size: '250x250') %></td>  
+<%# <%= image_tag(@current_user.cover,size: '250x250') %> 
+    <td><%= user.encrypted_password %></td>
+     <%# <td><%= current_user.sign_in_at %></td> 
  
-    
-    
-    
-  <td><%= button_to "Show", team, :class => "button button4", :method => :get %></td>
-  <td><%= button_to " Edit ", edit_team_path(team), :class => "button button4", :method => :get %></td>
-  <td><%= button_to "Delete", team, :class => "button button4", :method => :delete %></td>
+  
     </tr>
     
   <% end %>
 </table>
 </div>
 
+
+<br><br><br><br>
+
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<%= render "footer"%>

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
  root "main#index"
  devise_for :users, :controllers => { :registrations => "users" }
 #  resources :users, only: [:show]
- get 'users/:id' => 'users#show'
+#  get 'users/' => 'users#show'
+ devise_scope :user do
+  get "users/" => "users#index"
+end
 #  root :to=> "main#index"
 end
