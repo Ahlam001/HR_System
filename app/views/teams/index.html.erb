@@ -77,16 +77,15 @@ li a:hover {
 <br>
 <br>
 
-
-<h2>List of Teams</h2>
+<h2><%= t 'list.List Of Teams' %></h2>
 <br><br><br>
 <ul style="width: 250px;  background-color: #f1f1f1;  list-style-type: none; margin: 0; padding: 0;">
-  <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;" href="http://127.0.0.1:3000">Home</a></li>
-<li><a style=" text-decoration: none; padding: 20px 20px; color: #000;" href="http://127.0.0.1:3000/users">Users</a></li> 
- <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;"href="http://127.0.0.1:3000/employees">Employees</a></li>
- <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;"href="http://127.0.0.1:3000/teams">Teams</a></li>
-  <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;" href="http://127.0.0.1:3000/targets">Targets</a></li>
-  <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;"href="http://127.0.0.1:3000/devisions">Division</a></li>
+  <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;" href="http://127.0.0.1:3000"><%= t 'Home' %></a></li>
+<li><a style=" text-decoration: none; padding: 20px 20px; color: #000;" href="http://127.0.0.1:3000/users"><%= t 'models.Users' %></a></li> 
+ <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;"href="http://127.0.0.1:3000/employees"><%= t 'models.Employees' %></a></li>
+ <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;"href="http://127.0.0.1:3000/teams"><%= t 'models.Teams'%></a></li>
+  <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;" href="http://127.0.0.1:3000/targets"><%= t 'models.Targets' %></a></li>
+  <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;"href="http://127.0.0.1:3000/devisions"><%= t 'models.Divisions' %></a></li>
 </ul>
 
 
@@ -98,11 +97,12 @@ li a:hover {
 <div id="teams">
   
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Division </th>
-    <th>Team lead </th>
-    <th>Members </th>
+    <th><%= t 'Tables.Teams.ID' %></th>
+    <th><%= t 'Tables.Teams.Name' %></th>
+    <th><%= t 'Tables.Teams.Description' %></th>
+    <th><%= t 'Tables.Teams.Division' %> </th>
+    <th><%= t 'Tables.Teams.Team Lead' %> </th>
+    <th><%= t 'Tables.Teams.Members' %> </th>
   </tr>
   <% @teams.each do |team| %>
     <tr>
@@ -116,6 +116,7 @@ li a:hover {
     <% unless employee == nil then%>
       <% lead = employee.name %>
     <% end %>
+    <td><%= team.id %></td>
     <td><%= team.name %></td>
     <td><%= team.description %></td>
     <td><%= division %></td>
@@ -124,9 +125,9 @@ li a:hover {
     
     
     
-  <td><%= button_to "Show", team, :class => "button button4", :method => :get %></td>
-  <td><%= button_to " Edit ", edit_team_path(team), :class => "button button4", :method => :get %></td>
-  <td><%= button_to "Delete", team, :class => "button button4", :method => :delete %></td>
+  <td><%= button_to t('buttons.Show'), team, :class => "button button4", :method => :get %></td>
+  <td><%= button_to t('buttons.Edit'), edit_team_path(team), :class => "button button4", :method => :get %></td>
+  <td><%= button_to t('buttons.Delete'), team, :class => "button button4", :method => :delete %></td>
     </tr>
     
   <% end %>
