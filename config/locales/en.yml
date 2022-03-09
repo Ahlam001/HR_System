@@ -1,33 +1,67 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+   hello: "HR Employee Administration System Project"
+   Home: "Home"
+
+   buttons:
+     Show: "Show"
+     Edit: "Edit"
+     Delete: "Delete"
+
+   models:
+     Users: "Users"
+     Employees: "Employees"
+     Targets: "Targets"
+     Teams: "Teams"
+     Divisions: "divisions"
+
+   navbar:
+     Sign Up: "Sign Up"
+     Sign In: "Sign In"
+     Sign Out: "Sign Out"
+     HR System Platform: "HR System Platform"
+
+   list:
+     List of Users: "List of Users"
+     List Of Employees: "List of Employees"
+     List Of Teams: "List Of Teams"
+     List Of Targets: "List Of Targets"
+     List Of Divisions: "List Of Divisions "
+
+   Tables:
+     Divisions:
+       Name: "Name"
+       Description: "Description"
+       Teams: "Teams"
+       Manager: "Manager"
+     Targets:
+       ID: "ID"
+       Title: "Title"
+       Description: "Description"
+       Start date: " Start date"
+       Finish date: "Finish date: "
+       Team: "Team"
+       Status: "Status"
+     Teams: 
+       ID: " ID"
+       Name: "Name"
+       Description: "Description"
+       Division: "Division"
+       Team Lead: "Team lead"
+       Members: "Members"
+     Employees: 
+       ID: "ID"
+       Name: "Name"
+       Email: " Email"
+       Job: "Job"
+       Salary: "Salary"
+       Employment status: "Employment status"
+       Division: "Division"
+       Team: "Team"
+     Users:
+       ID: "ID"
+       Email: "Email"
+       Password: "Password"
+
+
+
+     

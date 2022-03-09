@@ -79,26 +79,12 @@ li a:hover {
 }
 </style>
 
-<ul style=" list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: #333;">
-<li style="color:white; font-size: 20px; position: absolute; left: 30px; top: 25px;  float: left;
-  border-right:1px solid #bbb;">HR System Platform</li>
-    <%# <li><%= @user.email %>
-<li style="float:right; padding: 16px 16px;   display: block; color: white;text-align: center;"><a href="/users/sign_out">Sign out</a></li>
-</ul>
 
 <br>
 <br>
-<h2>List of Divisions</h2>
+<h2><%= t 'list.List Of Divisions' %></h2>
 <br><br><br>
 
-<ul style="width: 250px;  background-color: #f1f1f1;  list-style-type: none; margin: 0; padding: 0;">
-  <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;" href="http://127.0.0.1:3000">Home</a></li>
-<li><a style=" text-decoration: none; padding: 20px 20px; color: #000;" href="http://127.0.0.1:3000/users">Users</a></li> 
- <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;"href="http://127.0.0.1:3000/employees">Employees</a></li>
- <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;"href="http://127.0.0.1:3000/teams">Teams</a></li>
-  <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;" href="http://127.0.0.1:3000/targets">Targets</a></li>
-  <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;"href="http://127.0.0.1:3000/devisions">Division</a></li>
-</ul>
 <%= button_to "", new_devision_path,:class => "fa fa-plus", :style => "border:none; font-size:30px; position: absolute;
   left: 1170px; top:155px;",:method => :get %>
 <div>
@@ -108,10 +94,10 @@ li a:hover {
 <div id="divisions">
 
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Teams</th>
-    <th>Manager</th>
+    <th><%= t 'Tables.Divisions.Name' %></th>
+    <th><%= t 'Tables.Divisions.Description' %></th>
+    <th><%= t 'Tables.Divisions.Teams' %></th>
+    <th><%= t 'Tables.Divisions.Manager' %></th>
    
   </tr>
 
@@ -128,9 +114,9 @@ li a:hover {
     <td><%= manager %></td>
       
  
-      <td><%= button_to "Show", devision, :class => "button button4", :method => :get %></td>
-  <td><%= button_to " Edit ", edit_devision_path(devision), :class => "button button4", :method => :get %></td>
-  <td><%= button_to "Delete", devision, :class => "button button4", :method => :delete %></td>
+      <td><%= button_to t('buttons.Show'), devision, :class => "button button4", :method => :get %></td>
+  <td><%= button_to t('buttons.Edit'), edit_devision_path(devision), :class => "button button4", :method => :get %></td>
+  <td><%= button_to t('buttons.Delete'), devision, :class => "button button4", :method => :delete %></td>
     </tr>
     
   <% end %>

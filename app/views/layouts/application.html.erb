@@ -7,16 +7,63 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+ <%= stylesheet_link_tag "bootstrap", "data-turbo-track": "reload" %>
+ <%= javascript_include_tag "bootstrap", "data-turbo-track": "reload" %>
+
+
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+     <%# <%= javascript_importmap_tags %>  
+     <%# <%= javascript_include_tag "application", "data-turbo-track": "reload" %> 
   </head>
  
        <%# <%= javascript_include_tag :defaults %> 
      
   <body>
+  
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><%= t 'navbar.HR System Platform' %></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+     
+     <li class="nav-item">  <a class="nav-link"  href="/users/sign_out"><%= t 'navbar.Sign Out'%></a></li>
+     <li class="nav-item"> <a class="nav-link"href="/users/sign_up"><%= t 'navbar.Sign Up' %></a></li>
+     <div class="nav-link"><%= link_to 'English', url_for(locale: :en) %></div>
+
+<div class="nav-link"><%= link_to 'عربي', url_for(:locale => 'ar') %></div>
+     
+</ul>
+    </div>
+  </div>
+</nav>
+<br><br><br>
+<nav class="nav flex-column">
+ 
+<a class="nav-link active"  href="http://127.0.0.1:3000" class="w3-bar-item w3-button w3-hover-white"><%= t 'Home'%></a> 
+  <a class="nav-link"  href="http://127.0.0.1:3000/users" class="w3-bar-item w3-button w3-hover-white"><%= t 'models.Users'%></a>  
+    <a  class="nav-link" class="nav-link" href="http://127.0.0.1:3000/employees" class="w3-bar-item w3-button w3-hover-white"><%= t 'models.Employees' %></a> 
+    <a class="nav-link" href="http://127.0.0.1:3000/teams" class="w3-bar-item w3-button w3-hover-white"><%= t 'models.Teams' %></a> 
+    <a class="nav-link" href="http://127.0.0.1:3000/devisions" class="w3-bar-item w3-button w3-hover-white"><%= t 'models.Divisions' %></a> 
+    <a class="nav-link" href="http://127.0.0.1:3000/targets"  class="w3-bar-item w3-button w3-hover-white"><%= t 'models.Targets' %></a> 
+    
+
+
+</nav>
+</div>
+
+
+  
     <%= yield %>
+    <style>
+
         <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
+      
+
   </body>
 </html>

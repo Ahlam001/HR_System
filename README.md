@@ -5,6 +5,11 @@
 * basic authentication for login and register User using *devise*
 * welcome mail send to registerd user using mailhog
 * user can uploade profile picture
+* add bootstrab
+
+
+
+https://user-images.githubusercontent.com/97739922/157540938-a06dbeee-2260-45d9-81f8-6d0c48bbcfbe.mov
 
 
 <img width="1512" alt="Screen Shot 1443-07-23 at 4 59 11 AM" src="https://user-images.githubusercontent.com/97739922/155444900-93568fe2-3289-4e1a-9533-56fe195a5c8f.png">
