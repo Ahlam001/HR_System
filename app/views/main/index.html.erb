@@ -15,36 +15,10 @@ body {font-size:16px;}
 
 </style>
 </head>
-<ul style=" list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: #f1f1f1;">
-<li style="float:right; padding: 16px 16px;   display: block; color: black;text-align: center;"><a href="/users/sign_out"><%= t 'navbar.Sign Out' %></a></li>
-<li style="float:right; padding: 16px 16px;   display: block; color: black;text-align: center;"><a href="/users/sign_up"><%= t 'navbar.Sign Up' %></a></li>
-<li style="float:right; padding: 16px 16px;   display: block; color: black;text-align: center;"><%= link_to 'English', url_for(locale: :en) %></li>
 
-<li style="float:right; padding: 16px 16px;   display: block; color: black;text-align: center;"><%= link_to 'عربي', url_for(:locale => 'ar') %></li>
-</ul>
 <body>
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-light-grey w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-  <a href="javascript:void(0)"  class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
-  <div class="w3-container">
-    <h3 class="w3-padding-64"><b> <br> </b></h3>
-  </div>
-  <div class="w3-bar-block">
-  <%# <--! <a href="#"  class="w3-bar-item w3-button w3-hover-white">User</a> --> %>
-  <%# <%= link_to "http://127.0.0.1:3000/users/4", "http://127.0.0.1:3000/users/4" %> 
-
-  <%# <%= link_to "show_index_of_users", users_path %> 
-
-
- <a href="http://127.0.0.1:3000/users" class="w3-bar-item w3-button w3-hover-white"><%= t 'models.Users'%></a>  
-    <a href="http://127.0.0.1:3000/employees" class="w3-bar-item w3-button w3-hover-white"><%= t 'models.Employees' %></a> 
-    <a href="http://127.0.0.1:3000/teams" class="w3-bar-item w3-button w3-hover-white"><%= t 'models.Teams' %></a> 
-    <a href="http://127.0.0.1:3000/devisions" class="w3-bar-item w3-button w3-hover-white"><%= t 'models.Divisions' %></a> 
-    <a href="http://127.0.0.1:3000/targets"  class="w3-bar-item w3-button w3-hover-white"><%= t 'models.Targets' %></a> 
-
-  </div>
-</nav>
 
 
 
@@ -52,7 +26,7 @@ body {font-size:16px;}
 
   <!-- Header -->
   <br><br><br>
-  <div class="w3-container" style="margin-top:80px" id="showcase">
+  <div class="w3-container" style="margin-top:-250px" id="showcase">
     <h1 class="w3-jumbo"><b><%= t 'hello' %></b></h1>
     <h1 class="w3-xxxlarge w3-text-black"><b></b></h1>
     <hr style="width:50px;border:5px solid black" class="w3-round">

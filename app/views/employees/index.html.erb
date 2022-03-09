@@ -58,33 +58,15 @@ h2 {
   left: 300px;
   top: 140px;
 }
-li a:hover {
-  background-color: #555;
-  color: white;
-}
+
 </style>
-<ul style=" list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: #333;">
-<li style="color:white; font-size: 20px; position: absolute; left: 30px; top: 25px;  float: left;
-  border-right:1px solid #bbb;"><%= t 'navbar.HR System Platform' %></li>
-    <%# <li><%= @user.email %>
-<li style="float:right; padding: 16px 16px;   display: block; color: white;text-align: center;"><a href="/users/sign_out"><%= t 'navbar.Sign Out'%></a></li>
-<li style="float:right; padding: 16px 16px;   display: block; color: black;text-align: center;"><a href="/users/sign_up"><%= t 'navbar.Sign Up' %></a></li>
-</ul>
+
 <br>
 <br>
 <h2><%= t 'list.List Of Employees' %></h2>
 
 
-<br><br><br>
 
-<ul style="width: 250px;  background-color: #f1f1f1;  list-style-type: none; margin: 0; padding: 0;">
-  <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;" href="http://127.0.0.1:3000"><%= t 'Home' %></a></li>
-<li><a style=" text-decoration: none; padding: 20px 20px; color: #000;" href="http://127.0.0.1:3000/users"><%= t 'models.Users' %></a></li> 
- <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;"href="http://127.0.0.1:3000/employees"><%= t 'models.Employees' %></a></li>
- <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;"href="http://127.0.0.1:3000/teams"><%= t 'models.Teams'%></a></li>
-  <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;" href="http://127.0.0.1:3000/targets"><%= t 'models.Targets' %></a></li>
-  <li><a style=" text-decoration: none; padding: 20px 20px; color: #000;"href="http://127.0.0.1:3000/devisions"><%= t 'models.Divisions' %></a></li>
-</ul>
 
 <%= button_to "", new_employee_path,:class => "fa fa-plus", :style => "border:none; font-size:30px; position: absolute;
   left: 1200px; top: 155px;",:method => :get %>
