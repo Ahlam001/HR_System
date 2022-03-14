@@ -6,6 +6,8 @@ one:
   job: MyString
   salary: 1
   employment_status: MyString
+  devision_id: 2
+  team_id: 2
 
 two:
   name: MyString
