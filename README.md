@@ -5,9 +5,15 @@
 * basic authentication for login and register User using *devise*
 * welcome mail send to registerd user using mailhog
 * user can uploade profile picture
+* test model employee 
+
+
 
 
 <img width="1512" alt="Screen Shot 1443-07-23 at 4 59 11 AM" src="https://user-images.githubusercontent.com/97739922/155444900-93568fe2-3289-4e1a-9533-56fe195a5c8f.png">
+
+<img width="1512" alt="Screen Shot 1443-08-12 at 9 05 31 PM" src="https://user-images.githubusercontent.com/97739922/158443774-3ed670f8-0ec9-4eb1-b1a3-a0039dd9b991.png">
+
 
 <img width="1512" alt="Screen Shot 1443-07-23 at 5 03 44 PM" src="https://user-images.githubusercontent.com/97739922/155538935-285424e8-c83d-4039-b08c-29ab1c789e37.png">
 
