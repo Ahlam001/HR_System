@@ -1,11 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  email: MyString
-  job: MyString
-  salary: 1
-  employment_status: MyString
+  name: ahlam
+  email: ahlam@testt.com
+  job: sw eng
+  salary: 1000
+  employment_status: fulltime
+  devision_id: 2
+  team_id: 2
 
 two:
   name: MyString

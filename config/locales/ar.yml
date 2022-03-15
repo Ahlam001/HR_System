@@ -1,13 +1,64 @@
 ar:
-  activerecord:
-    attributes:
-      team:
-        name: "اسم الفريق"
-        description: "وصف"
-  
-  globals:
-    forms:
-      messages:
-        errors:
-          one error: "يوجد هنا خطأ"
-          multiple errors: "يوجد هنا أخطاء %{count}"
+   hello: "مرحبًا بكم في نظام إدارة موظفي الموارد البشرية"
+   Home: "الصفحة الرئيسية"
+
+   buttons:
+     Show: "عرض"
+     Edit: "تعديل"
+     Delete: "حذف"
+   
+   models:
+     Users: "المستخدمين"
+     Employees: "الموظفين"
+     Targets: "الأهداف"
+     Teams: "الفرق"
+     Divisions: "الأقسام"
+
+   navbar:
+     Sign Up: "تسجيل جديد"
+     Sign In: "تسجيل الدخول"
+     Sign Out: "تسجيل الخروج"
+     HR System Platform: "نظام إدارة موظفي الموارد البشرية"
+
+   list:
+     List of Users: "قائمة المستخدمين"
+     List Of Employees: "قائمة الموظفين"
+     List Of Teams: "قائمة الفرق"
+     List Of Targets: "قائمة الأهداف"
+     List Of Divisions: "قائمة الأقسام"
+
+   Tables:
+     Divisions:
+       Name: "الإسم"
+       Description: "الوصف"
+       Teams: "الفرق"
+       Manager: "المدير"
+     Targets:
+       ID: "الرقم التعريفي"
+       Title: "العنوان"
+       Description: "الوصف"
+       Start date: "تاريخ البداية"
+       Finish date: "تاريخ النهاية"
+       Team: "الفريق"
+       Status: "الحالة"
+     Teams:
+       ID: "الرقم التعريفي"
+       Name: "الإسم"
+       Description: "الوصف"
+       Division: "القسم"
+       Team Lead: "قائد الفريق"
+       Members: "الأعضاء"
+     Employees:
+       ID: "الرقم التعريفي"
+       Name: "الإسم"
+       Email: "البريد الإلكتروني"
+       Job: "الوظيفة"
+       Salary: "الراتب"
+       Employment status: "حالة التوظيف"
+       Division: "القسم"
+       Team: "الفريق"
+     Users:
+       ID: "الرقم التعريفي"
+       Email: "البريد الإلكتروني"
+       Password: "الرقم السري"
+
